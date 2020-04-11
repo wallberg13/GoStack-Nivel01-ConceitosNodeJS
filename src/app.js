@@ -27,6 +27,8 @@ app.post("/repositories", (request, response) => {
 
   repositories.push(repository);
 
+  console.log(repository.title + " Adicionado com sucesso");
+
   return response.json(repository);
 });
 
@@ -57,6 +59,8 @@ app.put("/repositories/:id", (request, response) => {
 
 app.delete("/repositories/:id", (request, response) => {
   const { id } = request.params;
+
+  console.log(id + " Deletado com Sucesso!!!");
 
   if (!isUuid(id)) {
     return response.status(400).json({ error: true });
