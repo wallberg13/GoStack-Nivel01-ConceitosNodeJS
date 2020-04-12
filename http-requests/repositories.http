@@ -1,0 +1,17 @@
+@host = http://localhost:3333
+
+### GET Repositories
+GET {{host}}/repositories
+
+### Add Repositories
+POST {{host}}/repositories
+Content-Type: application/json
+
+{
+  "title": "Teste Diferente",
+  "url": "https://github.com/josepholiveira",
+  "techs": ["React Native", "Node.js", "Javascript"]
+}
+
+### Like no repositorios
+POST {{host}}/repositories/7590f38d-2e3d-4b95-9a72-473f72956876/like
